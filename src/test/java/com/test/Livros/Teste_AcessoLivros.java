@@ -18,7 +18,11 @@ public class Teste_AcessoLivros {
 
     @Test
     void teste_CriarConfig() {
+<<<<<<< HEAD
         
+=======
+    
+>>>>>>> eed53b29e58d7422e1d7bca63a7b45800807f95b
 
         try {
             File Teste = new File(caminho);
