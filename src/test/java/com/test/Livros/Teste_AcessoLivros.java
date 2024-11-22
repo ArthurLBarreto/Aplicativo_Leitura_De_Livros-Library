@@ -18,7 +18,7 @@ public class Teste_AcessoLivros {
 
     @Test
     void teste_CriarConfig() {
-        System.out.println("Diretorio que deseja criar pasta");
+        
 
         try {
             File Teste = new File(caminho);

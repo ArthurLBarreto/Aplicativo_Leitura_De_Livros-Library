@@ -1,13 +1,15 @@
 package com.project.DTO;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CriacaoConfig {
+public class ConfigDTO {
 
     private String caminho;
 
@@ -41,11 +43,16 @@ public class CriacaoConfig {
             for (File livro : arquivos) {
                 if (livro.getName().toLowerCase().endsWith(".pdf")) {
                     livros.add(livro.getName());
+                    System.out.println(livro.getName());
                 }
-                System.out.println("Os " + livros.size() + " livros que foram encontrados são: ");
             }
+             System.out.println("Os " + livros.size() + " livros que foram encontrados são: ");
             for (String l : livros) {
-                System.out.println(l);
+                if(!checarLivros(l)){
+                    inserirLivro(l);
+                     System.out.println(l);
+            }
+               
 
             }
 
@@ -54,6 +61,44 @@ public class CriacaoConfig {
         System.out.println("Caso um livro não esteja na lista verifique que ele está em formato .pdf");
     }
 
+    public boolean checarLivros(String nome) {
+
+        try (BufferedReader read = new BufferedReader(new FileReader(getCaminho() + "/config.txt"))) {
+            String s;
+            while ((s = read.readLine()) != null) {
+                    if((s.replace("=0", "")).equals(nome)){
+                    return true;
+                    }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro: " + e);
+        }
+        return false;
+    }
+    
+    
+    
+    
+    
+    public void inserirLivro(String nome){
+        try (BufferedWriter escrever = new BufferedWriter(new FileWriter(getCaminho()+"/config.txt",true))){
+            escrever.write("\n"+nome+"=0");
+            
+            
+            
+        } catch (IOException e) {
+        }
+        
+    }
+    
+public void teste(boolean t){
+    
+    t=true;
+    
+}
+    
+    
     public String getCaminho() {
         return caminho;
     }
