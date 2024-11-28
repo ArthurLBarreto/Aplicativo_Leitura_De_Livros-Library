@@ -1,3 +1,6 @@
 com\project\DTO\Aplicativo_Leitura_De_Livros.class
-com\project\DTO\CriacaoConfig.class
+com\project\VIEW\LivroView.class
+com\project\VIEW\ConsoleView.class
+com\project\DTO\ConfigDTO.class
 com\project\DTO\AcessoLivros.class
+com\project\VIEW\LivroView$1.class

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.test.Livros.Teste_AcessoLivros
+Test set: com.test.Livros.Test_LeituraLivro
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s - in com.test.Livros.Teste_AcessoLivros
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s - in com.test.Livros.Test_LeituraLivro

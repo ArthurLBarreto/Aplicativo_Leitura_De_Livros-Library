@@ -91,13 +91,7 @@ public class ConfigDTO {
         }
         
     }
-    
-public void teste(boolean t){
-    
-    t=true;
-    
-}
-    
+  
     
     public String getCaminho() {
         return caminho;
