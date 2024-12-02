@@ -23,34 +23,9 @@ import org.apache.pdfbox.rendering.PDFRenderer;
 public class Aplicativo_Leitura_De_Livros  {
     public static void main(String[] args) {
  
-    
-    
-     System.out.println("Texto antes da limpeza...");
+        new ConsoleView().index();
         
-        try {
-            Thread.sleep(2000); // Aguarda 2 segundos antes de limpar
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-       try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                // Para Windows
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                // Para Linux ou Mac
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    
-        
-        System.out.println("Console limpo!");
-    }
-          
           
     }
         
-
+}
