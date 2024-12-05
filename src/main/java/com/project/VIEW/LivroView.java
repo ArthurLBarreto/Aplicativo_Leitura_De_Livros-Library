@@ -5,6 +5,7 @@
 package com.project.VIEW;
 
 import com.project.DTO.AcessoLivros;
+import com.project.DTO.ConfigDTO;
 
 /**
  *
@@ -12,13 +13,15 @@ import com.project.DTO.AcessoLivros;
  */
 public class LivroView extends javax.swing.JFrame {
 
+    AcessoLivros acesso = new AcessoLivros();
+    
+    
     /**
      * Creates new form LivroView
      */
     public LivroView() {
         initComponents();
     }
-    AcessoLivros t = new AcessoLivros();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,13 +32,12 @@ public class LivroView extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        pagina = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 800));
 
-        jLabel1.setIcon(t.PaginaLivro());
-        jScrollPane1.setViewportView(jLabel1);
+        pagina.setIcon(acesso.PaginaLivro());
+        jScrollPane1.setViewportView(pagina);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,7 +95,7 @@ public class LivroView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel pagina;
     // End of variables declaration//GEN-END:variables
 }

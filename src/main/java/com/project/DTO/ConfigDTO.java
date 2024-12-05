@@ -1,5 +1,6 @@
 package com.project.DTO;
 
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,8 +12,11 @@ import java.util.Scanner;
 
 public class ConfigDTO {
 
-    private String caminho;
+    private String caminho="C:\\Users\\arthu\\OneDrive\\Documentos\\Estudo\\library";
+   public ArrayList<String> livros = new ArrayList();
+private int livroSelecionado;
 
+    
     public void criarDiretorio() {
         try {
             System.out.println("Digite o caminho para criar a pasta onde ficará os livros");
@@ -28,6 +32,7 @@ public class ConfigDTO {
                     pasta.createNewFile();
                     try (BufferedWriter escrever = new BufferedWriter(new FileWriter(caminho + "/config.txt", false))) {
                         escrever.write("Livros:");
+                        acharLivros();
                     } catch (Exception e) {
                         System.out.println("Erro " + e);
                     }
@@ -42,6 +47,7 @@ public class ConfigDTO {
                     pasta.createNewFile();
                     try (BufferedWriter escrever = new BufferedWriter(new FileWriter(caminho + "/config.txt", false))) {
                         escrever.write("Livros:");
+                        acharLivros();
                     } catch (Exception e) {
                         System.out.println("Erro " + e);
                     }
@@ -55,27 +61,42 @@ public class ConfigDTO {
     }
 
     public void acharLivros() {
-
+              String line;
         File pasta = new File(getCaminho());
         File[] arquivos = pasta.listFiles();
-        ArrayList<String> livros = new ArrayList<>();
-
+        ArrayList<String> Livros = new ArrayList<>();
         if (pasta.isDirectory()) {
             for (File livro : arquivos) {
                 if (livro.getName().toLowerCase().endsWith(".pdf")) {
-                    livros.add(livro.getName());
+                    Livros.add(livro.getName());
                     System.out.println(livro.getName());
                 }
             }
             organizarTela();
-            System.out.println("Os " + livros.size() + " livros que foram encontrados são: ");
-            for (String l : livros) {
+            System.out.println("Os " + Livros.size() + " livros que foram encontrados são: ");
+            for (String l : Livros) {
                 if (!checarLivros(l)) {
                     inserirLivro(l);
                     System.out.println(l);
                 }
 
             }
+            
+               try (BufferedReader read = new BufferedReader(new FileReader(getCaminho() + "/config.txt"))) {
+            while ((line = read.readLine()) != null) {
+               livros.add(line.split(".pdf")[0]);
+            }
+            
+        } catch (IOException e) {
+            System.out.println("Erro: " + e);
+        }
+            
+            
+            
+            
+            
+            
+            
             organizarTela();
         }
 
@@ -102,6 +123,8 @@ public class ConfigDTO {
         try (BufferedWriter escrever = new BufferedWriter(new FileWriter(getCaminho() + "/config.txt", true))) {
             escrever.write("\n" + nome + "=0");
 
+          
+            
         } catch (IOException e) {
         }
 
@@ -109,14 +132,11 @@ public class ConfigDTO {
     
      public void listaLivros() {
 
-        String line;
-        try (BufferedReader read = new BufferedReader(new FileReader(getCaminho() + "/config.txt"))) {
-            while ((line = read.readLine()) != null) {
-                System.out.println(line.split(".pdf")[0]);
+        for (int i = 0; i < livros.size(); i++) {
+                System.out.println(i>0 ? (i)+"°"+livros.get(i):""+livros.get(i));
             }
-        } catch (IOException e) {
-            System.out.println("Erro: " + e);
-        }
+            
+       
         organizarTela();
     }
 
@@ -127,7 +147,13 @@ public class ConfigDTO {
     public void setCaminho(String caminho) {
         this.caminho = caminho;
     }
+public int getLivroSelecionado() {
+        return livroSelecionado;
+    }
 
+    public void setLivroSelecionado(int livroSelecionado) {
+        this.livroSelecionado = livroSelecionado;
+    }
     public void organizarTela() {
         for (int i = 0; i < 3; i++) {
             System.out.println(" ");
@@ -140,4 +166,7 @@ public class ConfigDTO {
         }
 
     }
+
+
+
 }

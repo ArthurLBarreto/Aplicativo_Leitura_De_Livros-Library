@@ -15,32 +15,40 @@ public class ConsoleView extends ConfigDTO {
         try {
             while (t == 0) {
                 System.out.println("O que deseja fazer?");
-                System.out.println("1-Adicionar Diretorio\n"
-                        + "2- Listar Livros existentes\n"
-                        + "3- Adicionar novos(Coloque dentro da pasta library Antes de adicionar)\n"
-                        + "4- Abrir Livro\n"
-                        + "5- Sair\n");
+                System.out.println("""
+                                   1- Criar Diretorio
+                                   2- Adicionar Diretorio Existente
+                                   3- Listar Livros existentes
+                                   4- Adicionar novos(Coloque dentro da pasta library Antes de adicionar)
+                                   5- Abrir Livro
+                                   6- Sair
+                                   """);
                 System.out.print("->");
                 int n = sc.nextInt();
                 switch (n) {
-                    case 1:
-                        criarDiretorio();
-                        break;
-                    case 2:
+                    case 1 -> criarDiretorio();
+                    case 2 -> {
+                        System.out.println("Digite o caminho");
+                        setCaminho(new Scanner(System.in).next());
+                        
+                    }
+                    case 3 -> listaLivros();
+                    case 4 -> acharLivros();
+                    case 5 -> {
                         listaLivros();
-                        break;
-                    case 3:
-                        acharLivros();
-                        break;
-                    case 4:
-                        new LivroView().setVisible(true);
-                        break;
-                    case 5:
-
-                        t = 1;
-                        break;
-                    default:
-                        throw new AssertionError();
+                        System.out.println("Digite o numero do livro da lista acima");
+                        System.out.print("-> ");
+                        setLivroSelecionado(new Scanner(System.in).nextInt());
+                        if(getLivroSelecionado()>0){
+                            new AcessoLivros().telaLivro();
+                        }else{
+                            System.out.println("Valor digitado invalido");
+                        }
+                    }
+                    
+                        
+                    case 6 -> t = 1;
+                    default -> throw new AssertionError();
                 }
             }
 
