@@ -6,6 +6,7 @@ package com.project.VIEW;
 
 import com.project.DTO.AcessoLivros;
 import com.project.DTO.ConfigDTO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,33 +32,67 @@ public class LivroView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        ldDireito = new javax.swing.JLabel();
+        ldEsquerdo = new javax.swing.JLabel();
         pagina = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pagina.setIcon(acesso.PaginaLivro());
-        jScrollPane1.setViewportView(pagina);
+        ldDireito.setText("jLabel2");
+        ldDireito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ldDireitoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ldDireito, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 6, 110, 600));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        ldEsquerdo.setText("jLabel2");
+        ldEsquerdo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ldEsquerdoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ldEsquerdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 600));
+
+        pagina.setIcon(new javax.swing.ImageIcon("C:\\Users\\arthu\\Downloads\\1d9628bb-bb4e-4def-8da2-cd2a5b3bfe47.JPG")); // NOI18N
+        pagina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                paginaMouseClicked(evt);
+            }
+        });
+        pagina.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                paginaKeyPressed(evt);
+            }
+        });
+        getContentPane().add(pagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void paginaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paginaMouseClicked
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paginaMouseClicked
+
+    private void ldEsquerdoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ldEsquerdoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ldEsquerdoMouseClicked
+
+    private void ldDireitoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ldDireitoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ldDireitoMouseClicked
+
+    private void paginaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_paginaKeyPressed
+
+
+JOptionPane.showMessageDialog(null, "ola");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paginaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -95,7 +130,8 @@ public class LivroView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel ldDireito;
+    private javax.swing.JLabel ldEsquerdo;
     public javax.swing.JLabel pagina;
     // End of variables declaration//GEN-END:variables
 }

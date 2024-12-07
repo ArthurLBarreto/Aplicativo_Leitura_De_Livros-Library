@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class ConsoleView extends ConfigDTO {
 
+    AcessoLivros acesso = new AcessoLivros();
+
     public void index() {
         int t = 0;
         Scanner sc = new Scanner(System.in);
@@ -26,29 +28,36 @@ public class ConsoleView extends ConfigDTO {
                 System.out.print("->");
                 int n = sc.nextInt();
                 switch (n) {
-                    case 1 -> criarDiretorio();
+                    case 1 ->
+                        criarDiretorio();
                     case 2 -> {
                         System.out.println("Digite o caminho");
                         setCaminho(new Scanner(System.in).next());
-                        
+
                     }
-                    case 3 -> listaLivros();
-                    case 4 -> acharLivros();
+                    case 3 ->
+                        listaLivros();
+                    case 4 ->
+                        acharLivros();
                     case 5 -> {
                         listaLivros();
                         System.out.println("Digite o numero do livro da lista acima");
                         System.out.print("-> ");
                         setLivroSelecionado(new Scanner(System.in).nextInt());
-                        if(getLivroSelecionado()>0){
-                            new AcessoLivros().telaLivro();
-                        }else{
+                        if (getLivroSelecionado() > 0) {
+                            acesso.setPagina(getLivroSelecionado());
+                            acesso.livro =livros;
+                            acesso.PaginaLivro();
+                            acesso.telaLivro();
+                        } else {
                             System.out.println("Valor digitado invalido");
                         }
                     }
-                    
-                        
-                    case 6 -> t = 1;
-                    default -> throw new AssertionError();
+
+                    case 6 ->
+                        t = 1;
+                    default ->
+                        throw new AssertionError();
                 }
             }
 
@@ -57,7 +66,5 @@ public class ConsoleView extends ConfigDTO {
         }
 
     }
-
-   
 
 }
