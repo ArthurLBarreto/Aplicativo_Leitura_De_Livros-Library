@@ -55,7 +55,7 @@ public class ConsoleView extends ConfigDTO {
                     }
 
                     case 6 ->
-                        t = 1;
+                        System.exit(0);
                     default ->
                         throw new AssertionError();
                 }

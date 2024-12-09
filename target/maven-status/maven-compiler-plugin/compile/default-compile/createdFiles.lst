@@ -1,13 +1,11 @@
 com\project\DTO\Aplicativo_Leitura_De_Livros.class
-com\project\VIEW\LivroView$5.class
-com\project\VIEW\LivroView$4.class
+com\project\DTO\AcessoLivros$1.class
+com\project\DTO\ConfigDTO.class
+com\project\VIEW\LivroView$2.class
 com\project\DTO\AcessoLivros.class
 com\project\VIEW\LivroView$3.class
 com\project\DTO\AcessoLivros$2.class
 com\project\VIEW\LivroView.class
 com\project\VIEW\TestePagina.class
 com\project\VIEW\ConsoleView.class
-com\project\DTO\AcessoLivros$1.class
-com\project\DTO\ConfigDTO.class
-com\project\VIEW\LivroView$2.class
 com\project\VIEW\LivroView$1.class

@@ -9,8 +9,6 @@ public class Aplicativo_Leitura_De_Livros  {
  
         ConsoleView s =new ConsoleView();
                AcessoLivros a=  new AcessoLivros();
-
-         
         ConfigDTO p = s ;
        s.index();
         

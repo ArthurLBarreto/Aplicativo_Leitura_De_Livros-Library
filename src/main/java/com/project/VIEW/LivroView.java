@@ -6,6 +6,8 @@ package com.project.VIEW;
 
 import com.project.DTO.AcessoLivros;
 import com.project.DTO.ConfigDTO;
+import java.awt.RenderingHints;
+import java.awt.event.KeyAdapter;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,28 +34,11 @@ public class LivroView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ldDireito = new javax.swing.JLabel();
-        ldEsquerdo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         pagina = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ldDireito.setText("jLabel2");
-        ldDireito.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ldDireitoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(ldDireito, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 6, 110, 600));
-
-        ldEsquerdo.setText("jLabel2");
-        ldEsquerdo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ldEsquerdoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(ldEsquerdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 600));
 
         pagina.setIcon(new javax.swing.ImageIcon("C:\\Users\\arthu\\Downloads\\1d9628bb-bb4e-4def-8da2-cd2a5b3bfe47.JPG")); // NOI18N
         pagina.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -66,7 +51,9 @@ public class LivroView extends javax.swing.JFrame {
                 paginaKeyPressed(evt);
             }
         });
-        getContentPane().add(pagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jScrollPane1.setViewportView(pagina);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 518, 609));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,20 +65,12 @@ public class LivroView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_paginaMouseClicked
 
-    private void ldEsquerdoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ldEsquerdoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ldEsquerdoMouseClicked
-
-    private void ldDireitoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ldDireitoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ldDireitoMouseClicked
-
     private void paginaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_paginaKeyPressed
 
+        
 
-JOptionPane.showMessageDialog(null, "ola");
 
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_paginaKeyPressed
 
     /**
@@ -130,8 +109,7 @@ JOptionPane.showMessageDialog(null, "ola");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ldDireito;
-    private javax.swing.JLabel ldEsquerdo;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel pagina;
     // End of variables declaration//GEN-END:variables
 }
